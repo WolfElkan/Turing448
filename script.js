@@ -18,18 +18,24 @@ var halted = false
 var state = 's0'
 var loc = 0
 var readbit
+var writebit
 var active
 
+function halt() {
+	$('#step').prop('disabled', true)
+	halted = true;
+}
 
 function read(argument) {
+	$(active).removeClass('active')
 	active = $$('#mem'+octal(loc))
+	$(active).addClass('active')
 	readbit = active.innerText
-	console.log(readbit)
 }
 
 function write(argument) {
 	var s = $$('#'+state).children
-	var writebit = s[4 * readbit + 2].children[0].value
+	writebit = s[4 * readbit + 2].children[0].value
 	$(active).removeClass('b0')
 	$(active).removeClass('b1')
 	active.innerText = writebit
@@ -38,8 +44,19 @@ function write(argument) {
 
 function execute(argument) {
 	var s = $$('#'+state).children
-	var n = s[4 * readbit + 1]
-	console.log(n.children[0].value)
+	var n = s[4 * readbit + 1].children[0].value
+	var oldstate = state
+	state = 's' + n
+	var a = s[4 * readbit + 3].children[0].value
+	var g = s[4 * readbit + 4].children[0].value
+	var oldloc = loc
+	g = g ? g : 0
+	loc += g + 64
+	loc %= 64
+	// Abs checkbox not working 
+	if (oldloc == loc && readbit == writebit && oldstate == state) {
+		halt()
+	}
 }
 
 var sequence = ['Read','Write','Execute']
@@ -60,5 +77,10 @@ $(document).ready(function() {
 		$(this).removeClass('b1')
 		this.innerText ^= 1
 		$(this).addClass(`b${this.innerText}`)
+	})
+	$('#run').click(function() {
+		while (!halted) {
+			$('#step').click()
+		}
 	})
 })
