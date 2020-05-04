@@ -1,0 +1,41 @@
+div, th, td {
+	border: solid black 1px;
+	text-align: center;
+}
+
+#memory, #compiler {
+	display: inline-block;
+}
+
+.mem {
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	border: solid black 1px;
+	font-size: 30px;
+}
+
+.b0 {
+	background-color: black;
+	color: white;
+}
+
+input {
+	width: 30px;
+}
+
+#clock {
+	/*height: 76px;*/
+}
+
+div {
+	vertical-align: top;
+}
+
+#step {
+	height: 60px;
+	width: 70px;
+}
+#clock {
+	padding: 8px;
+}

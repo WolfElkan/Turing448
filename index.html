@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Turing448</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="../jQuery/external/jquery/jquery.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<center>
+		<div id="memory">
+			<table>
+				<tr>
+					<td class="mem b0" id="mem00">0</td>
+					<td class="mem b0" id="mem01">0</td>
+					<td class="mem b0" id="mem02">0</td>
+					<td class="mem b0" id="mem03">0</td>
+					<td class="mem b0" id="mem04">0</td>
+					<td class="mem b0" id="mem05">0</td>
+					<td class="mem b0" id="mem06">0</td>
+					<td class="mem b0" id="mem07">0</td>
+				</tr>
+				<tr>
+					<td class="mem b0" id="mem10">0</td>
+					<td class="mem b0" id="mem11">0</td>
+					<td class="mem b0" id="mem12">0</td>
+					<td class="mem b0" id="mem13">0</td>
+					<td class="mem b0" id="mem14">0</td>
+					<td class="mem b0" id="mem15">0</td>
+					<td class="mem b0" id="mem16">0</td>
+					<td class="mem b0" id="mem17">0</td>
+				</tr>
+				<tr>
+					<td class="mem b0" id="mem20">0</td>
+					<td class="mem b0" id="mem21">0</td>
+					<td class="mem b0" id="mem22">0</td>
+					<td class="mem b0" id="mem23">0</td>
+					<td class="mem b0" id="mem24">0</td>
+					<td class="mem b0" id="mem25">0</td>
+					<td class="mem b0" id="mem26">0</td>
+					<td class="mem b0" id="mem27">0</td>
+				</tr>
+				<tr>
+					<td class="mem b0" id="mem30">0</td>
+					<td class="mem b0" id="mem31">0</td>
+					<td class="mem b0" id="mem32">0</td>
+					<td class="mem b0" id="mem33">0</td>
+					<td class="mem b0" id="mem34">0</td>
+					<td class="mem b0" id="mem35">0</td>
+					<td class="mem b0" id="mem36">0</td>
+					<td class="mem b0" id="mem37">0</td>
+				</tr>
+				<tr>
+					<td class="mem b0" id="mem40">0</td>
+					<td class="mem b0" id="mem41">0</td>
+					<td class="mem b0" id="mem42">0</td>
+					<td class="mem b0" id="mem43">0</td>
+					<td class="mem b0" id="mem44">0</td>
+					<td class="mem b0" id="mem45">0</td>
+					<td class="mem b0" id="mem46">0</td>
+					<td class="mem b0" id="mem47">0</td>
+				</tr>
+				<tr>
+					<td class="mem b0" id="mem50">0</td>
+					<td class="mem b0" id="mem51">0</td>
+					<td class="mem b0" id="mem52">0</td>
+					<td class="mem b0" id="mem53">0</td>
+					<td class="mem b0" id="mem54">0</td>
+					<td class="mem b0" id="mem55">0</td>
+					<td class="mem b0" id="mem56">0</td>
+					<td class="mem b0" id="mem57">0</td>
+				</tr>
+				<tr>
+					<td class="mem b0" id="mem60">0</td>
+					<td class="mem b0" id="mem61">0</td>
+					<td class="mem b0" id="mem62">0</td>
+					<td class="mem b0" id="mem63">0</td>
+					<td class="mem b0" id="mem64">0</td>
+					<td class="mem b0" id="mem65">0</td>
+					<td class="mem b0" id="mem66">0</td>
+					<td class="mem b0" id="mem67">0</td>
+				</tr>
+				<tr>
+					<td class="mem b0" id="mem70">0</td>
+					<td class="mem b0" id="mem71">0</td>
+					<td class="mem b0" id="mem72">0</td>
+					<td class="mem b0" id="mem73">0</td>
+					<td class="mem b0" id="mem74">0</td>
+					<td class="mem b0" id="mem75">0</td>
+					<td class="mem b0" id="mem76">0</td>
+					<td class="mem b0" id="mem77">0</td>
+				</tr>
+			</table>
+		</div>
+		<div id="compiler">
+			<div id="program">
+				<table>
+					<thead>
+						<th>State</th>
+						<th class="b0" colspan="4">Read 0</th>
+						<th class="b1" colspan="4">Read 1</th>
+					</thead>
+					<thead>
+						<td></td>
+						<td title="New State">New</td>
+						<td title="Write">W</td>
+						<td title="Absolute?">A</td>
+						<td>Go</td>
+						<td title="New State">New</td>
+						<td title="Write">W</td>
+						<td title="Absolute?">A</td>
+						<td>Go</td>
+					</thead>
+					<tr id="s0">
+						<td>0</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s1">
+						<td>1</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s2">
+						<td>2</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option selected value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option selected value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s3">
+						<td>3</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option selected value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option selected value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s4">
+						<td>4</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option selected value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option selected value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s5">
+						<td>5</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option selected value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option selected value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s6">
+						<td>6</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option selected value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option selected value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s7">
+						<td>7</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option selected value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option selected value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s8">
+						<td>8</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option selected value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option selected value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="s9">
+						<td>9</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option selected value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option selected value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="sA">
+						<td>A</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option selected value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option selected value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="sB">
+						<td>B</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option selected value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option selected value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="sC">
+						<td>C</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option selected value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option selected value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="sD">
+						<td>D</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option selected value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option selected value="D">D</option>
+								<option value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="sE">
+						<td>E</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option selected value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option selected value="E">E</option>
+								<option value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					<tr id="sF">
+						<td>F</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option selected value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option selected value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+								<option value="D">D</option>
+								<option value="E">E</option>
+								<option selected value="F">F</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="0">0</option>
+								<option selected value="1">1</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<input type="number">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="clock">
+				<button id="step">Read</button>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
