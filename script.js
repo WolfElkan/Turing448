@@ -18,18 +18,28 @@ var halted = false
 var state = 's0'
 var loc = 0
 var readbit
+var active
 
 
 function read(argument) {
-	readbit = $$('#mem'+octal(loc)).innerText
+	active = $$('#mem'+octal(loc))
+	readbit = active.innerText
+	console.log(readbit)
 }
 
 function write(argument) {
-	// console.log("I'm writing now!")
+	var s = $$('#'+state).children
+	var writebit = s[4 * readbit + 2].children[0].value
+	$(active).removeClass('b0')
+	$(active).removeClass('b1')
+	active.innerText = writebit
+	$(active).addClass('b'+writebit)
 }
 
 function execute(argument) {
-	// console.log("I'm executing now!")
+	var s = $$('#'+state).children
+	var n = s[4 * readbit + 1]
+	console.log(n.children[0].value)
 }
 
 var sequence = ['Read','Write','Execute']
