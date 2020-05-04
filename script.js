@@ -6,11 +6,22 @@ function $$(selector) {
 	return $(selector)[0]
 }
 
-var state = 0
+function octal(dec) {
+	var e = Math.floor(dec / 8)
+	var o = dec % 8
+	return `${e}${o}`
+}
+
+var metastate = 0
 var halted = false
 
+var state = 's0'
+var loc = 0
+var readbit
+
+
 function read(argument) {
-	// console.log("I'm reading now!")
+	readbit = $$('#mem'+octal(loc)).innerText
 }
 
 function write(argument) {
@@ -25,10 +36,10 @@ var sequence = ['Read','Write','Execute']
 var fseq = [read,write,execute]
 
 function step() {
-	var f = fseq[state]
-	state ++
-	state %= 3
-	$('#step')[0].innerText = sequence[state]
+	var f = fseq[metastate]
+	metastate ++
+	metastate %= 3
+	$('#step')[0].innerText = sequence[metastate]
 	f()
 }
 
