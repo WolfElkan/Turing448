@@ -9,6 +9,7 @@ function $$(selector) {
 function octal(dec) {
 	var e = Math.floor(dec / 8)
 	var o = dec % 8
+	console.log(dec+` -> ${e}${o}`)
 	return `${e}${o}`
 }
 
@@ -20,10 +21,14 @@ var loc = 0
 var readbit
 var writebit
 var active
+var run
+var running = false
 
 function halt() {
+	$('#step')[0].innerText = "Halt"
 	$('#step').prop('disabled', true)
 	halted = true;
+	clearInterval(run)
 }
 
 function read(argument) {
@@ -47,12 +52,17 @@ function execute(argument) {
 	var n = s[4 * readbit + 1].children[0].value
 	var oldstate = state
 	state = 's' + n
+	$('#'+oldstate).removeClass('active')
+	$('#'+state).addClass('active')
 	var a = s[4 * readbit + 3].children[0].value
 	var g = s[4 * readbit + 4].children[0].value
+	g = Number(g)
 	var oldloc = loc
+	console.log(g,typeof(g))
 	g = g ? g : 0
-	loc += g + 64
+	loc += 64 + g
 	loc %= 64
+	// console.log(loc)
 	// Abs checkbox not working 
 	if (oldloc == loc && readbit == writebit && oldstate == state) {
 		halt()
@@ -79,8 +89,15 @@ $(document).ready(function() {
 		$(this).addClass(`b${this.innerText}`)
 	})
 	$('#run').click(function() {
-		while (!halted) {
-			$('#step').click()
+		if (running) {
+			clearInterval(run)
+			this.innerText = "Run"
+		} else {
+			run = setInterval(function() {
+				$('#step').click()
+			}, 50);
+			this.innerText = "Stop"
+			running = true
 		}
 	})
 })

@@ -54,3 +54,7 @@ div {
 #clock {
 	padding: 8px;
 }
+
+tr.active td {
+	background-color: limegreen;
+}

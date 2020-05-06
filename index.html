@@ -11,7 +11,7 @@
 		<div id="memory">
 			<table>
 				<tr>
-					<td title="mem00" class="mem b0" id="mem00">0</td>
+					<td title="mem00" class="mem b0 active" id="mem00">0</td>
 					<td title="mem01" class="mem b0" id="mem01">0</td>
 					<td title="mem02" class="mem b0" id="mem02">0</td>
 					<td title="mem03" class="mem b0" id="mem03">0</td>
@@ -111,7 +111,7 @@
 						<td title="Absolute?">A</td>
 						<td>Go</td>
 					</thead>
-					<tr id="s0">
+					<tr class="active" id="s0">
 						<td>0</td>
 						<td>
 							<select>
@@ -1176,5 +1176,12 @@
 			</div>
 		</div>
 	</center>
+	Data:
+	<input type="text" class="field" id="datafield" value="0000000000000000">
+	<button>Import</button>
+	<br>
+	Program:
+	<input type="text" class="field" id="programfield" value="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000">
+	<button>Import</button>
 </body>
 </html>
