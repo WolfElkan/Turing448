@@ -58,3 +58,15 @@ div {
 tr.active td {
 	background-color: limegreen;
 }
+
+.field {
+	font-family: monospace;
+}
+
+#data {
+	width: 105px;
+}
+
+#prog {
+	width: 635px;
+}
